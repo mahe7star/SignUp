@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Skoch - Delegates</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">  
+  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-social.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" type="text/css" href="../lib/noty.css">
+  <script src="../js/vendor/jquery-library.js"></script>
+  <script type="text/JavaScript" src='js/state.js'></script>
+</head>
+<style type="text/css">
+  .rc-anchor-normal{
+    width: 294px !important;
+  }
+  @media screen and(max-width: 768px){
+    #msform{
+      width: 50%;
+    }
+  }
+</style>
+<body>
+<form id="msform">
+  <fieldset>
+    <h2 class="fs-title">Delegate Profile Registration</h2>
+    <h3 class="fs-subtitle"></h3>
+    <div style="width: 103%">
+      <select name="delegate_prefix" style="width: 18%;float: left;padding-left: 0px;padding-right: 3px !important;">
+        <option value="Mr">Mr</option>
+        <option value="Ms">Ms</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Dr">Dr</option>
+        <option value="Dr">Prof</option>
+      </select>
+      <input type="text" name="delegate_firstName" placeholder="First Name" style="width: 40%;float: left;
+      margin-left: 1%;" id="fname">
+      <input type="text" name="delegate_lastName" placeholder="Last Name" style="width: 40%;float: left;
+      margin-left: 1%;" id="lname">
+    </div>
+    <input type="text" name="delegate_email" placeholder="Email" id="demail"/>
+    <input type="text" name="delegate_number" placeholder="Mobile Number" id="phNumber"/>
+    <select id="listBox" name="delegate_state" onchange='selct_district(this.value)'></select>
+    <input type="text" name="delegate_village" placeholder="Village" id="village"/>
+    <input type="text" name="delegate_district" placeholder="District" id="district"/>
+    <a href="javascript:void(0)" class="btn btn-block btn-social btn-twitter" style="height: 40px;font-size: 16px; padding-left: 38%;padding-top: 3%;width: 103% !important">   
+      <i class="fa fa-twitter" style="padding-left: 15px;padding-right: 29px;padding-top: 4px;font-size: 23px;"></i>TWITTER
+    </a>
+    <p style="font-size: 13px;display: block;margin-top: 20px"><a href="http://www.skoch.in/17/privacy-policy.html" style="text-decoration: none;">Pivacy Policy!</a></p>
+  </fieldset>
+</form>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+  <script type="text/javascript" src="../lib/noty.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="js/delegate.js"></script>
+  <script src="js/formToObject.js"></script>
+</body>
+</html>

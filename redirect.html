@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Skoch</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var url_string = window.location.href;
+				var url = new URL(url_string);
+				var twitterCheck = url.searchParams.get("twitter");
+				var vote_id = url.searchParams.get("voting_id");
+				if(twitterCheck != null && twitterCheck == "true"){
+					localStorage.setItem("twitter", twitterCheck);
+					window.location = "http://skochvoting.tk/voting/vote.php?voting_id=" + vote_id;
+					return;
+				}	
+				var twit = 	url.searchParams.get("organic_twitter");		
+				var userId = url.searchParams.get("uid");
+				var profile_status = url.searchParams.get("profile_complete");
+				// var userName = url.searchParams.get("fullName");				
+				localStorage.setItem("user-id", userId);
+				// localStorage.setItem("display-name", userName);
+				localStorage.setItem("organic_twitter",twit);
+				var date = new Date();
+				var time = date.getTime();
+				localStorage.setItem("time-stamp", time);
+				var d = new Date();
+				d.setTime(d.getTime() + (10*24*60*60*1000));
+    			var expires = "expires="+ d.toUTCString();
+    			document.cookie = "uid=" + userId + ";" + expires + ";path=/";
+    			if(profile_status == "false"){
+					window.location = "profile.html";
+				}else{
+					// disabled for voting purposes
+					//window.location = "../index.php";
+					window.location = "../index.php";
+				}
+			});
+		</script>
+	</body>
+</html>

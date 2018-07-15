@@ -1,0 +1,570 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+	overflow: hidden;
+	/* background: -moz-linear-gradient(-45deg, rgba(246, 115, 13, 0.7) 0%, rgba(217, 8, 69, 0.7) 80%);
+    background: -webkit-linear-gradient(-45deg, rgba(246, 115, 13, 0.7) 0%, rgba(217, 8, 69, 0.7) 80%);
+    background: linear-gradient(135deg, rgba(246, 115, 13, 0.7) 0%, rgba(217, 8, 69, 0.7) 80%); */
+}
+/*form styles*/
+.left-signup{
+	height: 100vh;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+.right-signup{
+	height: 100vh;
+}
+.left-signin{
+	height: 100vh;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+.right-signin{
+	display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+}
+.terms-span{
+	font-size: 12px;
+	margin-left: 10px;
+}
+.left-signup .rotated-div{
+	background: url(../assets/img/bg.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.15);
+    background-blend-mode: color;
+    transform: rotate(45deg);
+    border-radius: 90px;
+    width: 160%;
+    position: absolute;
+	top: -10px;
+    left: -55%;
+    z-index: -1;
+}
+.logo-skoch{
+	margin: 0 auto;
+}
+.logo-skoch-top{
+	margin-bottom: 5px;
+	animation-name: logo-rotate;
+	animation-duration: 12s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+@keyframes logo-rotate {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+.input-alert{
+	display: none;
+    color: #fff;
+    background: linear-gradient(90deg,#f77e94,#f7a986);
+    padding: 5px;
+    font-size: 11px;
+    float: right;
+    margin-top: 9px;
+	margin-right: 10px;
+	border-radius: 25px
+}
+.name-error{
+	position: absolute;
+    width: 160px;
+    margin-right: -80px;
+    text-align: center;
+    right: -85px;
+    top: 70px;
+}
+.in-group{
+	border: 1px solid #ddd;
+	border-radius: 25px;
+	margin-bottom: 10px;
+	text-align: left;
+	overflow: hidden
+}
+#msform {
+	width: 430px;
+	margin: 50px auto 15px;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: transparent;
+	border: 0 none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	/* box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); 
+	padding: 20px 30px 10px 20px;width: 80%;
+	margin: 0 10%; */
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea, #msform select {
+	padding: 12px;
+    border: none;
+    /* border-top: 0px; */
+    /* border-right: 0; */
+    /* border-left: 0; */
+    border-radius: 25px;
+    /* margin-bottom: 10px; */
+    width: 55%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #444;
+    font-size: 13px;
+    background: transparent;
+    outline: none;
+}
+.main-div-right{
+
+}
+/* #msform input::-webkit-input-placeholder { 
+	color: #ffffff;
+  }
+#msform input::-moz-placeholder { 
+	color: #ffffff;
+  }
+#msform input:-ms-input-placeholder {
+	color: #ffffff;
+  }
+#msform input:-moz-placeholder {
+	color: #ffffff;
+  } */
+.back2signin{
+	color: #a94442;
+    font-size: 12px;
+    margin: 32px 0 0;
+    text-decoration: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 20px;
+}
+.back2signin a:hover,.back2signin a:focus{
+	text-decoration: none!important;
+}
+.back2signin a{
+	font-weight: bold;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+    background: #e43d63;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 15px;
+    transition: 0.5s;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #e43d63;
+}
+#passHint{
+	color: #7b2626;
+    font-size: 13px;
+    /* float: left; */
+    margin: 10px;
+}
+/*headings*/
+.fs-title {
+	font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 30px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 50%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+	/* border: 1px solid #e43d63; */
+	transition: 0.3s;
+    color: #aaa;
+    background: #f1f1f1;
+    border-radius: 25px;
+    margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+    width: 100%;
+    height: 2px;
+	background: #eaeaea;
+	transition: 0.3s;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background:#e43d63;
+	color: white;
+}
+.privacy-p{
+	font-size: 13px;
+	display: block;
+	margin-top: 20px
+}
+.btn-soc{
+	height: 30px;
+    width: 30px;
+    line-height: 30px!important;
+    padding: 0!important;
+    border-radius: 50%!important;
+    margin-left: 5px;
+    background: #00aced;
+    color: #fff;
+}
+.twitter-text{
+	color: #7b2626;
+    font-size: 13px;
+}
+.soc-a:hover,.soc-a:focus{
+	text-decoration: none;
+}
+.signup-div{
+	margin: 40px 0 0;
+	font-size: 12px;
+}
+.signup-div span{
+	color: #7b2626;
+}
+.signup-btn{
+	/* text-decoration: none;
+	padding:10px 20px; */
+	/* background: rgba(0,0,0,0.6); */
+	/* color:#fff; */
+	transition: 0.3s;
+	font-weight: bold;
+	color: #e46767;
+}
+.signup-btn:hover,.signup-btn:focus{
+	text-decoration: none;
+	color: #af4242;
+}
+.twitter-div{
+	margin: 20px;
+}
+.twitter-div span{
+	font-size: 12px;
+}
+.rc-anchor-light.rc-anchor-normal {
+    border: 1px solid #d3d3d3;
+    border-radius: 25px;
+}
+.forget-pass{
+	font-size: 20px;
+	font-weight: bold;
+	font-family: montserrat, arial, verdana;
+}
+.forget-pass span{
+	font-size: 12px;
+	font-weight: 100;
+}
+.modal-body{
+	padding: 20px 0 0!important
+}
+.send-btn{
+	background: #e43d63;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.send-btn:hover,.send-btn:focus{
+	color:#fff!important;
+	background: #b32949;
+}
+.modal-content{
+	background: linear-gradient(45deg,rgba(249, 125, 125, 0.5882352941176471),rgba(255, 217, 150, 0.86));
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.astirk{
+	font-size: 50px;
+	font-weight: bolder;
+}
+.input-group .form-control{
+	padding: 20px 12px!important;
+	border-radius: 0!important
+}
+.input-group .btn{
+	padding: 10px 12px!important;
+	border-radius: 0!important
+}
+/* checkbox */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px!important;
+    padding-top: 4px!important;
+    margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+	text-align: left;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+	width: 25px;
+	border-radius: 50%;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #ec415b;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.modal{
+	width: 100vw;
+}
+@media only screen and (min-width: 1800px){
+	.fs-title{
+		font-size: 25px;
+	}
+	#msform{
+		width: 600px
+	}
+	#msform input, #msform textarea, #msform select{
+		padding: 15px;
+		font-size: 19px;
+	}
+	#forgotPass a{
+		font-size: 19px;
+	}
+	#msform .action-button{
+		width: 130px;
+	}
+	.signup-div, .privacy-p, #passHint, .twitter-text, .back2signin, #condition>.container{
+		font-size: 19px;	
+	}
+	.logo-skoch-top{
+		width: 110px
+	}
+	.logo-skoch-bottom{
+		width: 225px;
+    	margin-top: 20px;
+	}
+	.left-signup .rotated-div{
+		top: -135px;
+		height: 140vh;
+    	left: -65%;
+	}
+}
+@media only screen and (max-width: 995px){
+	body{
+		overflow: auto;
+	}
+	.left-signup .rotated-div{
+		display: none;
+	}
+	.left-signup{
+		height: auto;
+	}
+	.logo-skoch-bottom{
+		width: 125px;
+	}
+	.logo-skoch-top{
+		width: 65px;
+	}
+	.logo-skoch {
+		margin: 12px auto;
+		display: block;
+	}
+	.right-signup{
+		height: auto;
+		overflow: auto;
+	}
+	.right-signin #msform fieldset{
+		margin: 55px auto;
+	}
+	.right-signin{
+		display: block;
+		height: auto;
+	}
+	.back2signin{
+		position: relative;
+	}
+}
+@media only screen and (max-width: 768px) {
+	#msform{
+		width: auto;
+	}
+    #msform fieldset{
+    	width: 95%;
+        margin: 0px auto;
+	}
+	.right-signin{
+		display: block;
+	}
+	#msform input, #msform textarea, #msform select{
+		width: 98%;
+	}
+	#msform{
+		margin: 85px auto 15px;
+		width: 100%;
+	}
+	.right-signin #msform{
+		margin: 0;
+	}
+	.in-group{
+		position: relative;
+	}
+	.input-alert{
+		position: absolute;
+		right: 0;
+	}
+	.name-error{
+		right: 50%;
+    	top: -25px;
+	}
+	.left-signup .rotated-div{
+		top: -650px;
+    	left: -24%;
+	}
+	.logo-skoch-bottom{
+		width: 125px;
+	}
+	.logo-skoch-top{
+		width: 65px;
+	}
+	.left-signup{
+		height: 13vh;
+	}
+	.logo-skoch {
+		margin: 28px auto;
+    	display: block;
+	}
+	.back2signin{
+		position: relative;
+		text-align: center;
+		bottom: 20px;
+	}
+	.left-signup .rotated-div{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 360px){
+	.left-signup .rotated-div {
+		top: -575px;
+	}
+	#progressbar{
+		margin: 0;
+	}
+	#msform {
+		margin: 68px auto 15px;
+		width: 100%;
+	}
+	.logo-skoch-top {
+		width: 45px;
+	}
+	.logo-skoch-bottom {
+		width: 95px;
+	}
+	#passHint{
+		font-size: 12px;
+	}
+	.left-signup .rotated-div{
+		display: none;
+	}
+}

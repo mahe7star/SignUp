@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>SKOCH GROUP | Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src='../js/jquery-1.11.1.min.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/JavaScript" src='js/state.js'></script>
+    <script src="js/formToObject.js"></script>
+    <script type="text/javascript" src="../lib/noty.js"></script>
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../lib/noty.css">
+  </head>
+
+  <body>
+    <div class="col-md-4 left-signup">
+      <div class="rotated-div">
+        
+      </div>
+      <div class="main-div-left text-center">
+        <a href="http://skochvoting.tk/user/" class="logo-skoch">
+          <img src="assets/img/skoch-logo-top.png" alt="" class="logo-skoch-top"><br>
+          <img src="assets/img/skoch-logo-bottom.png" alt="" class="logo-skoch-bottom">
+        </a> 
+      </div>
+    </div>
+    <div class="col-md-8 right-signup">
+      <form id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+          <li class="active">Account Setup</li>
+          <li id="field2">Personal Details</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset id="fieldset1">
+          <h2 class="fs-title">Create your account</h2>
+          <h3 class="fs-subtitle"></h3>
+          <div class="in-group">
+              <input type="text" placeholder="Email" id="email"/>
+              <P class="input-alert" id="emailerror"></P>
+          </div>
+          <div class="in-group">
+            <input type="password" name="password" placeholder="Password" id="password" />
+            <P class="input-alert" id="passerror"></P>
+          </div>
+          <div class="in-group">
+            <input type="password" placeholder="Confirm Password" id="conpassword"/>
+            <P class="input-alert" id="conpasserror"></P>
+          </div>
+          
+         
+          <p id="passHint">Password must be between 8 and 20 digits long and include at least one numeric digit.</p>
+          <input type="button" class="next action-button" value="Next" onclick="firstNext('click');"/ >
+          <p class="text-center">or</p>
+          <p class="text-center">
+            <a href="http://skochvoting.tk/b/uAuth/auth/twitter" class="soc-a">
+              <span class="btn btn-twitter btn-soc">
+                <i class="fab fa-twitter" style="float:none;font-size: 14px!important;"></i>
+              </span>
+              <span class="twitter-text"> &nbsp;Sign in with Twitter</span>
+            </a>
+          </p>
+        </fieldset>
+        
+        <fieldset id="fieldset2">
+          <P class="input-alert" id="termerror" style="position: relative;
+          width: 100%;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;&nbsp;Please agree to our terms and conditions!</P>
+          <h2 class="fs-title">Personal Details</h2>
+          <h3 class="fs-subtitle"></h3>
+          <div class="in-group">
+            <select name="title" style="width: 18%;float: left;padding-left: 0px;padding-right: 3px !important;border-right: 1px solid #eee;">
+              <option value="Mr">Mr</option>
+              <option value="Ms">Ms</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Dr">Dr</option>
+              <option value="Dr">Prof</option>
+            </select>
+            <input type="text" name="first_name" placeholder="First Name" style="width: 40%;float: left;
+            margin-left: 1%;border-right: 1px solid #eee;border-left: 1px solid #eee;" id="fname">
+            <input type="text" name="last_name" placeholder="Last Name" style="width: 40%;
+            margin-left: 1%;border-left: 1px solid #eee;" id="lname">
+            <P class="input-alert name-error" id="nameerror"></P>
+          </div>
+
+          
+          <div class="in-group">
+            <input type="text" name="mobile" placeholder="Phone" id="phone"/>
+            <P class="input-alert" id="phoneerror"></P>
+          </div>
+          <div class="in-group">
+              <input type="text" name="companyName" placeholder="Organization Name" id="company">
+              <P class="input-alert" id="companyerror"></P>
+          </div>
+          <div class="in-group">
+            <select id="listBox" name="state" onchange='selct_district(this.value)'></select>
+            <P class="input-alert"class="input-alert" id="stateerror"></P>
+          </div>
+          <div class="in-group">
+            <input type="text" name="city" placeholder="Enter Your City" id="city"/>
+            <P class="input-alert" id="cityerror"></P>
+          </div>
+          
+          
+          <div id="condition">
+            <label class="container">AGREE TO <a href="http://www.skoch.in/17/privacy-policy.html" class="signup-btn">TERMS &amp; CONDITIONS</a>
+              <input type="checkbox" checked="checked" id="agree">
+              <span class="checkmark"></span>
+            </label>
+            <!-- <input type="checkbox" id="agree" style="width: auto;"><span for="agree" class="terms-span">AGREE TO<a href="http://www.skoch.in/17/privacy-policy.html" target="_blank" class="signup-btn">  TERMS &amp; CONDITIONS </a></span> -->
+            
+          </div>
+          <input type="button"  class="previous action-button" id="prev" value="Previous" />
+          <input type="button"  class="submit action-button" value="Submit" id="submitBtn" />
+          <center><p style="color:blue;font-size:20px;display: none;margin-bottom: 8%" id="success">Sign Up Successful</p></center>
+  
+          <input type="button"  class="submit action-button" style="display: none;width: 130px" value="Proceed To Sign In" id="signinBtn" />
+
+        </fieldset>
+      </form>
+      
+      <p class="back2signin">Already have an ID?<a href="signin.html" class="signup-btn">SIGN IN </a>instead</p>
+    </div>
+    
+  </body>
+</html>
