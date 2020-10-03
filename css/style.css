@@ -26,6 +26,9 @@ body {
 }
 .right-signup{
 	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .left-signin{
 	height: 100vh;
@@ -100,7 +103,7 @@ body {
 }
 #msform {
 	width: 430px;
-	margin: 50px auto 15px;
+	/* margin: 50px auto 15px; */
 	text-align: center;
 	position: relative;
 }
